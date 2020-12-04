@@ -6,7 +6,7 @@
 * Protocol driven database & applications list. DICOM Database Browser allows a typical research department to start their own developed applications
 * Series are stored in their original format with no modification 
 * DICOM Series Anonymizer
-* Multi-Modality DICOM Editor with configurable vendors private dictionary
+* Multi-Modality DICOM Editor with configurable dictionary
 * DICOM Multi-Modality & Multidimensional Image Viewer
 
 ## Requirement:
