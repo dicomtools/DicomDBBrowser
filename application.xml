@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dicomDBBrowserProtocol version="1.0">
+	
+	<displayName>ImageJ</displayName>
+	<command>.\Other\RunHidden.exe .\Other\openImageJ.bat</command>
+	<argument>null</argument>
+	
+</dicomDBBrowserProtocol>
