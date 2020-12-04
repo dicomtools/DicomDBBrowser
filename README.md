@@ -11,9 +11,9 @@
 
 ## Requirement:
 
-https://github.com/cerr/CERR
-https://github.com/dicomtools/TriDFusion
-https://github.com/dicomtools/DicomMultiFilesEditor
+* https://github.com/cerr/CERR
+* https://github.com/dicomtools/TriDFusion
+* https://github.com/dicomtools/DicomMultiFilesEditor
 
 
 See https://daniellafontaine.com/ for more information
