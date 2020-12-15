@@ -12,7 +12,7 @@
 #  echo    $0 \<deployedMCRroot\> args
 #else
 #  echo Setting up environment variables
-#  MCRROOT="/usr/local/MATLAB/MATLAB_Runtime/v96"
+#  MCRROOT="/usr/local/MATLAB/MATLAB_Runtime/v98"
 #  echo ---
   LD_LIBRARY_PATH=.:${MCRROOT}/runtime/glnxa64 ;
   LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${MCRROOT}/bin/glnxa64 ;
