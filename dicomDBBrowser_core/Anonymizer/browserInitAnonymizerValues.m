@@ -678,7 +678,7 @@ function browserInitAnonymizerValues()
 
     function cancelAnonymizerValuesCallback(~,~)
 
-        anonymizerValues('set', '');
+        browserAnonymizerValues('set', '');
 
         delete(dlgSetAnon);  
     end
