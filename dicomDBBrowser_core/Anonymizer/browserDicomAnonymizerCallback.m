@@ -11,26 +11,26 @@ function browserDicomAnonymizerCallback(~,~)
 %Last specifications modified:
 %
 % Copyright 2020, Daniel Lafontaine, on behalf of the TriDFusion development team.
-% 
+%
 % This file is part of The DICOM Database Browser (dicomDBBrowser).
-% 
+%
 % TriDFusion development has been led by: Daniel Lafontaine
-% 
-% TriDFusion is distributed under the terms of the Lesser GNU Public License. 
-% 
+%
+% TriDFusion is distributed under the terms of the Lesser GNU Public License.
+%
 %     This version of dicomDBBrowser is free software: you can redistribute it and/or modify
 %     it under the terms of the GNU General Public License as published by
 %     the Free Software Foundation, either version 3 of the License, or
 %     (at your option) any later version.
-% 
+%
 % dicomDBBrowser is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 % without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 % See the GNU General Public License for more details.
-% 
+%
 % You should have received a copy of the GNU General Public License
 % along with dicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
-    if numel(gsBrowserMainWindowDisplayPtr('get')) 
+    if numel(gsBrowserMainWindowDisplayPtr('get'))
 
         gtDisplay = gtBrowserDisplayPtr('get');
         gadOffset = gadBrowserOffsetPtr('get');
@@ -41,29 +41,29 @@ function browserDicomAnonymizerCallback(~,~)
         for i=1: numel(gadOffset)
             if numel(gsBrowserMainWindowDisplay) >= gadOffset{i}
 
-                sLine = gsBrowserMainWindowDisplay{gadOffset{i}};                          
-                if strlength(sLine) 
+                sLine = gsBrowserMainWindowDisplay{gadOffset{i}};
+                if strlength(sLine)
 
-%                            sPath = extractAfter(sLine, 130);  
+%                            sPath = extractAfter(sLine, 130);
                     sPath = gtDisplay{gadOffset{i}}.sTargetDirectory;
 
                     try
                         browserInitAnonymizerValues();
 
                         tValues = browserAnonymizerValues('get');
-                        if ~isempty(tValues)                                        
+                        if ~isempty(tValues)
                             sCurrentDir = pwd;
                             sMatFile = [sCurrentDir '/' 'lastUsedDir.mat'];
                             % load last data directory
                             if exist(sMatFile, 'file')
                                 % lastDirMat mat file exists, load it
                                 load('-mat', sMatFile);
-                                if exist('lastUsedDir', 'var') 
+                                if exist('lastUsedDir', 'var')
                                     sCurrentDir = lastUsedDir;
-                                end  
+                                end
                                 if sCurrentDir == 0
                                     sCurrentDir = pwd;
-                                end                                        
+                                end
                             end
 
                             sTargetDir = uigetdir(sCurrentDir, ...
@@ -72,14 +72,14 @@ function browserDicomAnonymizerCallback(~,~)
                             if sTargetDir == 0
                                 return;
                             end
-                            sTargetDir = [sTargetDir '/'];                             
+                            sTargetDir = [sTargetDir '/'];
 
                             sFileName = sprintf('%s_%s_%s', ...
                                             tValues.PatientName, ...
                                             tValues.PatientID, ...
                                             datetime('now','Format','MMMM-d-y-hhmmss') ...
                                             );
-                                            
+
                             sAnoDir   = sprintf('%s%s//', ...
                                             sTargetDir, ...
                                             sFileName ...
@@ -93,14 +93,14 @@ function browserDicomAnonymizerCallback(~,~)
                                 lastUsedDir = sTargetDir;
                                 save(sMatFile, 'lastUsedDir');
                             catch
-                                
-                                browserProgressBar(1 , sprintf('Warning: Cant save file %s', sMatFile));             
-                                h = msgbox(sprintf('Warning: Cant save file %s', sMatFile), 'Warning'); 
+
+                                browserProgressBar(1 , sprintf('Warning: Cant save file %s', sMatFile));
+%                                h = msgbox(sprintf('Warning: Cant save file %s', sMatFile), 'Warning'); 
 
 %                                        javaFrame = get(h, 'JavaFrame');
 %                                        javaFrame.setFigureIcon(javax.swing.ImageIcon('./logo.png'));
-                            end             
-                            
+                            end
+
                             browserDicomAnonymizer(char(sPath)  , ...
                                                    char(sAnoDir), ...
                                                    sFileName    , ...
@@ -109,8 +109,8 @@ function browserDicomAnonymizerCallback(~,~)
 
                         end
                     catch
-                        
-                        browserProgressBar(1 , 'Error: browserDicomAnonymizerCallback() error detected!');             
+
+                        browserProgressBar(1 , 'Error: browserDicomAnonymizerCallback() error detected!');
                         h = msgbox('Error: browserDicomAnonymizerCallback() error detected!', 'Error');
 
 %                                javaFrame = get(h, 'JavaFrame');
@@ -118,8 +118,7 @@ function browserDicomAnonymizerCallback(~,~)
                     end
                 end
             end
-        end   
-    end  
+        end
+    end
 
 end
-
