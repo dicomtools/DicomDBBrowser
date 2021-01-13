@@ -78,7 +78,7 @@ function browserCerrCallbak(~, ~)
     planC = loadPlanC(sCerrMatFile, tempdir);
     planC = updatePlanFields(planC);
     planC = quality_assure_planC(sCerrMatFile, planC);
-
+    
     % 3.	Add nifty segmentation to planC:
     if ~isempty(asNiftiPath)
         for tt=1:numel(asNiftiPath)
