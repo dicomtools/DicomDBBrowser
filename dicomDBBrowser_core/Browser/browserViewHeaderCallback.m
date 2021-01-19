@@ -49,9 +49,9 @@ function browserViewHeaderCallback(~, ~)
                      if browserMultiThread('get')
                          
                         sRootPath = browserRootPath('get');
-                        sDicomMultiFilesEditor = sprintf('%s/dicomMultiFilesEditor/', sRootPath);
+                        sDicomMultiFilesEditor = sprintf('%sdicomMultiFilesEditor/', sRootPath);
 
-                        cd sDicomMultiFilesEditor;
+                        cd(sDicomMultiFilesEditor);
                         if exist('dicomMultiFilesEditor.exe', 'file') % Windows
                             system( char(strcat('dicomMultiFilesEditor.exe', {' '}, sPath, ' [-tc:/temp] [-m] [-h1] &')));
                         elseif exist('run_dicomMultiFilesEditor.sh', 'file') % Linux

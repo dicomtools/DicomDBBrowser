@@ -66,9 +66,9 @@ function browserDicomViewerCallback(~, ~)
             try
                 if browserMultiThread('get')
                     sRootPath = browserRootPath('get');
-                    sTriDFusion = sprintf('%s/TriDFusion/', sRootPath);
+                    sTriDFusion = sprintf('%sTriDFusion/', sRootPath);
 
-                    cd sTriDFusion;
+                    cd(sTriDFusion);
                     if exist('TriDFusion.exe', 'file') % Windows
                         system( char(strcat('TriDFusion.exe', {' '}, sPath, '&')) );
                     elseif exist('run_TriDFusion.sh', 'file') % Linux
