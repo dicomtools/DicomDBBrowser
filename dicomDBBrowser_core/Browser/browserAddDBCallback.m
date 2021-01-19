@@ -90,8 +90,11 @@ function browserAddDBCallback(~, ~)
     end
 
     function addDBToXmlCallback(hObject, ~)
+        
+        sRootPath = browserRootPath('get');
+        sDatabase = sprintf('%s/database.xml', sRootPath);
 
-        xmlfile = fullfile('./database.xml');
+        xmlfile = fullfile( sDatabase );
         DOMnode = xmlread(xmlfile);
 
         root = DOMnode.getDocumentElement;
@@ -106,8 +109,8 @@ function browserAddDBCallback(~, ~)
         dbPath.appendChild(textPath);
         root.appendChild(dbPath);
 
-        xmlwrite('./database.xml',DOMnode);
-        type('./database.xml');
+        xmlwrite(sDatabase, DOMnode);
+        type(sDatabase);
 
         set(hObject, 'Enable', 'off');           
 

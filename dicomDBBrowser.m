@@ -32,6 +32,8 @@ function dicomDBBrowser(varargin)
 
     initBrowserGlobal();
     
+    initBrowserRootPath();
+  
     browserMultiThread('set', false);
     browserFastSearch ('set', false);
     

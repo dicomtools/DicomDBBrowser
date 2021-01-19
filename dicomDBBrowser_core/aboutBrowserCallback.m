@@ -30,8 +30,10 @@ function aboutBrowserCallback(~, ~)
 % You should have received a copy of the GNU General Public License
 % along with dicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
+    sRootPath = browserRootPath('get');
+
     sDisplayBuffer = '';
-    fFileID = fopen('./about.txt','r');
+    fFileID = fopen( sprintf('%s/about.txt', sRootPath),'r' );
     if~(fFileID == -1)
         tline = fgetl(fFileID);
         while ischar(tline)

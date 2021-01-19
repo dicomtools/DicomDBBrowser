@@ -72,6 +72,7 @@ function initBrowserGlobal()
     gsBrowserMainWindowDisplayPtr('set', '');    
     
     btnBrowserCerrPtr('set', '');     
-
+    
+    browserRootPath('set', './');
 
 end

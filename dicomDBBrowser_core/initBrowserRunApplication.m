@@ -30,7 +30,9 @@ function initBrowserRunApplication()
 % You should have received a copy of the GNU General Public License
 % along with dicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
-    tXMLList = browser_xml2struct('./application.xml');
+    sRootPath = browserRootPath('get');
+
+    tXMLList = browser_xml2struct( sprintf('%s/application.xml', sRootPath) );
     if ~isfield(tXMLList, 'dicomDBBrowserProtocol')
         return;
     end

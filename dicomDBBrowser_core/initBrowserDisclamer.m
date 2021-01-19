@@ -39,7 +39,10 @@ function initBrowserDisclamer()
 %    yPosition = (adScreenSize(4) /2) - (ySize /2);
 
     sDisplayBuffer = '';
-    fFileID = fopen('./disclamer.txt','r');
+    
+    sRootPath = browserRootPath('get');
+    
+    fFileID = fopen( sprintf('%s/disclamer.txt', sRootPath), 'r' );
     if~(fFileID == -1)
         tline = fgetl(fFileID);
         while ischar(tline)
