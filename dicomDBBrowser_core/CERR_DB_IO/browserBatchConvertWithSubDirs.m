@@ -93,7 +93,7 @@ function saved_fullFileName = browserBatchConvertWithSubDirs(varargin)
                 
         for kk=1:numel(sourceDir)
         
-            patient = scandir_mldcm(sourceDir{kk}, hWaitbar, 1, excludePixelDataFlag);
+            patient = scandir_mldcm(sourceDir{kk}, 1, excludePixelDataFlag);
             if ~isempty(patient)
                 for j = 1:length(patient.PATIENT)
                     dcmdirS.(['patient_' num2str(patientNum)]) = patient.PATIENT(j);
@@ -136,7 +136,8 @@ function saved_fullFileName = browserBatchConvertWithSubDirs(varargin)
         end
         
         % Pass the java dicom structures to function to create CERR plan
-        planC = dcmdir2planC(combinedDcmdirS,mergeScansFlag);
+        optS.saveDICOMheaderInPlanC = 'No';
+        planC = dcmdir2planC(combinedDcmdirS,mergeScansFlag,optS);
                      
         %Check for duplicate name of sourceDirName
 
