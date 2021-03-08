@@ -89,13 +89,20 @@ function browserCerrCallbak(~, ~)
                     try
                         tNiftiInfo = niftiinfo(char(atListing(yy)));
                         if ~isempty(tNiftiInfo)
-                            planC = importNiftiSegToPlanC(planC, char(atListing(yy)));
+                            for nn=1:numel(planC{3})
+                                if strcmpi(planC{3}(2).scanInfo(1).imageType, 'pt')
+                                    try
+                                        planC = importNiftiSegToPlanC(planC, char(atListing(yy)), nn);
+
+                                    catch
+                                    end
+                                end
+                            end
                         end
                     catch
                     end
                 end
-            end
-            
+            end            
         end
     end
     
