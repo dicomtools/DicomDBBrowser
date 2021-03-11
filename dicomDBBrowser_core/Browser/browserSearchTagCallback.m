@@ -1,7 +1,7 @@
 function browserSearchTagCallback(~, ~)
 %function browserSearchTagCallback(~, ~)
 %Search under all Directory and SubDirectory a tag.
-%See dicomDBBrowser.doc (or pdf) for more information about options.
+%See DicomDBBrowser.doc (or pdf) for more information about options.
 %
 %Note: option settings must fit on one line and can contain one semicolon at most.
 %Options can be strings, cell arrays of strings, or numerical arrays.
@@ -14,21 +14,21 @@ function browserSearchTagCallback(~, ~)
 % 
 % This file is part of The DICOM Database Browser (dicomDBBrowser).
 % 
-% TriDFusion development has been led by: Daniel Lafontaine
+% DicomDBBrowser development has been led by: Daniel Lafontaine
 % 
-% TriDFusion is distributed under the terms of the Lesser GNU Public License. 
+% DicomDBBrowser is distributed under the terms of the Lesser GNU Public License. 
 % 
 %     This version of dicomDBBrowser is free software: you can redistribute it and/or modify
 %     it under the terms of the GNU General Public License as published by
 %     the Free Software Foundation, either version 3 of the License, or
 %     (at your option) any later version.
 % 
-% dicomDBBrowser is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+% DicomDBBrowser is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 % without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 % See the GNU General Public License for more details.
 % 
 % You should have received a copy of the GNU General Public License
-% along with dicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
+% along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
     hjFileChooser = hjBrowserFileChooserPtr('get');
 
@@ -42,7 +42,9 @@ function browserSearchTagCallback(~, ~)
 
     if strcmp(get(btnBrowserSearchTagPtr('get'), 'String'), 'Abort')
 
-        set(btnBrowserSearchTagPtr('get'), 'background', 'default');
+        set(btnBrowserSearchTagPtr('get'), 'Background', browserButtonBackgroundColor('get'));
+        set(btnBrowserSearchTagPtr('get'), 'Foreground', browserButtonForegroundColor('get'));
+        
         set(btnBrowserSearchTagPtr('get'), 'String', 'Search');
         browserCancelSearch('set', true);
     else
@@ -68,7 +70,8 @@ function browserSearchTagCallback(~, ~)
     %                    browserCurrentDBPath('set', atDBList{dOffset}.sDBPath);
 
            set(btnBrowserSearchTagPtr('get'), 'String', 'Abort');
-           set(btnBrowserSearchTagPtr('get'), 'background', 'w');
+           set(btnBrowserSearchTagPtr('get'), 'Background', browserButtonPushedBackgroundColor('get'));
+           set(btnBrowserSearchTagPtr('get'), 'Foreground', browserButtonPushedForegroundColor('get'));
 
            set(btnBrowserPatientNamePtr('get'), 'Enable', 'Off');
            set(btnBrowserPatientIDPtr('get')  , 'Enable', 'Off');
@@ -128,8 +131,9 @@ function browserSearchTagCallback(~, ~)
            if browserCancelSearch('get') == false
                browserProgressBar(1, 'Ready');
            end
-
-           set(btnBrowserSearchTagPtr('get'), 'background', 'default');
+           
+           set(btnBrowserSearchTagPtr('get'), 'Background', browserButtonBackgroundColor('get'));
+           set(btnBrowserSearchTagPtr('get'), 'Foreground', browserButtonForegroundColor('get'));
            set(btnBrowserSearchTagPtr('get'), 'String', 'Search');
 
            set(btnBrowserPatientNamePtr('get'), 'Enable', 'On');

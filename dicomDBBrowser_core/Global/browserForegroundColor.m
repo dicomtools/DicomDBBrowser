@@ -1,6 +1,6 @@
-function asList = getBrowserDrivesList()
-%function asList = getBrowserDrivesList()
-%Return the system drives list.
+function aColor = browserForegroundColor(sAction, aValue)
+%function aColor = browserForegroundColor(sAction, aValue)
+%Get\Set Browser Foreground Color.
 %See DicomDBBrowser.doc (or pdf) for more information about options.
 %
 %Note: option settings must fit on one line and can contain one semicolon at most.
@@ -30,32 +30,10 @@ function asList = getBrowserDrivesList()
 % You should have received a copy of the GNU General Public License
 % along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
-    if ispc
-        asDrivesLetter = getdrives();
-        
-        for jj=1:numel(asDrivesLetter)
-            asDrivesName{jj} = driveName(asDrivesLetter{jj});
-            asList{jj} = sprintf('%s (%s)', asDrivesName{jj}, upper(asDrivesLetter{jj}));
-        end
-    else
-        lsList = ls('/');
-        txt2cell = textscan(lsList,'%s','delimiter',' ');
-        txt2cell = [{filesep};txt2cell{1}(2:end)];
-        txt2cell(strcmp('',txt2cell)) = [];
-        asList = txt2cell;
-    end
-    
-    function sDriveName = driveName(sLetter) 
-        
-        [~,msg] = system( sprintf('dir %s', sLetter) );
-        cac = strsplit( msg, '\n' );
-        has = contains( cac, 'Volume in drive');
-        
-        sDriveName = regexp( cac{has}, '(?<= is ).+$', 'match', 'once' );
-        if isempty(sDriveName)
-            has = contains( cac, 'Volume Serial Number is'); 
-            sDriveName = regexp( cac{has}, '(?<= is ).+$', 'match', 'once' );            
-        end
-        
-    end
+    persistent paColor; 
+
+    if strcmpi('set', sAction)
+       paColor = aValue;            
+    end      
+    aColor = paColor;
 end

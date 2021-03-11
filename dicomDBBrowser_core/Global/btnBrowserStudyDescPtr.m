@@ -14,9 +14,9 @@ function aObject = btnBrowserStudyDescPtr(sAction, aValue)
 % 
 % This file is part of The DICOM Database Browser (dicomDBBrowser).
 % 
-% TriDFusion development has been led by: Daniel Lafontaine
+% DicomDBBrowser development has been led by: Daniel Lafontaine
 % 
-% TriDFusion is distributed under the terms of the Lesser GNU Public License. 
+% DicomDBBrowser is distributed under the terms of the Lesser GNU Public License. 
 % 
 %     This version of dicomDBBrowser is free software: you can redistribute it and/or modify
 %     it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ function aObject = btnBrowserStudyDescPtr(sAction, aValue)
 % See the GNU General Public License for more details.
 % 
 % You should have received a copy of the GNU General Public License
-% along with dicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
+% along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
     persistent paObject; 
 
