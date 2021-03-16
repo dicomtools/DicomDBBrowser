@@ -40,7 +40,6 @@ function initBrowserRootPath()
     else 
         sRootDir = fileparts(mfilename('fullpath'));
         sRootDir = erase(sRootDir, 'dicomDBBrowser_core');        
-        sRootDir = [sRootDir '/'];
 
         if isfile(sprintf('%sdisclamer.txt', sRootDir))
             browserRootPath('set', sRootDir);
