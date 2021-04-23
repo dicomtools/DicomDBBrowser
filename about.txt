@@ -12,7 +12,7 @@ DicomDBBrowser is distributed in the hope that it will be useful, but WITHOUT AN
 
 DicomDBBrowser development has been led by: Daniel Lafontaine
 
-Lead programmer:
+Project Manager and Programmer:
    Daniel Lafontaine
    lafontad@mskcc.org
    Memorial Sloan Kettering 
