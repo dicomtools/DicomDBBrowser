@@ -62,7 +62,7 @@ function browserDicomAnonymizerCallback(~,~)
                                     sCurrentDir = lastUsedDir;
                                 end
                                 if sCurrentDir == 0
-                                    sCurrentDir = pwd;
+                                    sCurrentDir = browserRootPath('get');
                                 end
                             end
 
@@ -80,7 +80,7 @@ function browserDicomAnonymizerCallback(~,~)
                                             datetime('now','Format','MMMM-d-y-hhmmss') ...
                                             );
 
-                            sAnoDir   = sprintf('%s%s//', ...
+                            sAnoDir   = sprintf('%sDDBB_%s//', ...
                                             sTargetDir, ...
                                             sFileName ...
                                             );

@@ -53,7 +53,7 @@ function browserViewHeaderCallback(~, ~)
 
                         cd(sDicomMultiFilesEditor);
                         if exist('dicomMultiFilesEditor.exe', 'file') % Windows
-                            system( char(strcat('dicomMultiFilesEditor.exe', {' '}, sPath, ' [-tc:/temp] [-m] [-h1] &')));
+                            system( char(strcat('dicomMultiFilesEditor.exe', {' '}, sPath, ' [-m] [-h1] &')));
                         elseif exist('run_dicomMultiFilesEditor.sh', 'file') % Linux
                             system( char(strcat( sprintf('%s/run_dicomMultiFilesEditor.sh', sDicomMultiFilesEditor), {' '}, sPath, ' [-t./temp] [-m] [-h1] &')));
                         end
@@ -69,7 +69,7 @@ function browserViewHeaderCallback(~, ~)
                             end 
                         end
                         clear dicomMultiFilesEditor;
-                        dicomMultiFilesEditor(char(sPath), '[-tc:/temp]', '[-m]', '[-h1]', '[-i]');
+                        dicomMultiFilesEditor(char(sPath), '[-m]', '[-h1]', '[-i]');
                      end
                  catch
                         browserProgressBar(1, 'Error: browserViewHeaderCallback(): error(s) occur while trying to view the header!');

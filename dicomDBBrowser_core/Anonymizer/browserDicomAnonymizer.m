@@ -42,12 +42,18 @@ function browserDicomAnonymizer(sInputFolder, sOutputFolder, sIsntanceName, valu
         sOutputFolder = [sOutputFolder '/'];
     end
 
+    try
+        
+    set(dlgBrowserWindowsPtr('get'), 'Pointer', 'watch');
+    drawnow;     
+        
 %    aList = dir(sInputFolder);
     f = java.io.File(char(sInputFolder));
     aList = f.listFiles();
 
     dFileID = 0;
-    for dOffset = 1 : numel(aList) 
+    dLastOffset = numel(aList);
+    for dOffset = 1 : dLastOffset
         if ~aList(dOffset).isDirectory 
 
             if isdicom([sInputFolder char(aList(dOffset).getName())])
@@ -58,7 +64,9 @@ function browserDicomAnonymizer(sInputFolder, sOutputFolder, sIsntanceName, valu
                 dicomanon([sInputFolder char(aList(dOffset).getName())], ...
                           [sOutputFolder sNewName], 'update', values);
 
-                browserProgressBar(dOffset /  numel(aList) , 'Processing Anonymization');   
+                if mod(dOffset,5)==1 || dOffset == dLastOffset         
+                    browserProgressBar(dOffset /  dLastOffset , sprintf('Processing Anonymization %d/%d', dOffset, dLastOffset)); 
+                end
 
             end
          end  
@@ -72,5 +80,12 @@ function browserDicomAnonymizer(sInputFolder, sOutputFolder, sIsntanceName, valu
     else
         browserProgressBar(1, 'Ready');             
     end
+    
+    catch
+        browserProgressBar(1, 'Error:browserDicomAnonymizer()');        
+    end
 
+    set(dlgBrowserWindowsPtr('get'), 'Pointer', 'default');
+    drawnow;    
+    
 end
