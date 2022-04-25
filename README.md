@@ -11,7 +11,6 @@
 
 ## Requirement:
 
-* https://github.com/cerr/CERR
 * https://github.com/dicomtools/TriDFusion
 * https://github.com/dicomtools/DicomMultiFilesEditor
 

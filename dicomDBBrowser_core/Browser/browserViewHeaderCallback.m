@@ -55,7 +55,7 @@ function browserViewHeaderCallback(~, ~)
                         if exist('dicomMultiFilesEditor.exe', 'file') % Windows
                             system( char(strcat('dicomMultiFilesEditor.exe', {' '}, sPath, ' [-m] [-h1] &')));
                         elseif exist('run_dicomMultiFilesEditor.sh', 'file') % Linux
-                            system( char(strcat( sprintf('%s/run_dicomMultiFilesEditor.sh', sDicomMultiFilesEditor), {' '}, sPath, ' [-t./temp] [-m] [-h1] &')));
+                            system( char(strcat( sprintf('%s/run_dicomMultiFilesEditor.sh', sDicomMultiFilesEditor), {' '}, sPath, ' [-r./temp] [-m] [-h1] &')));
                         end
                         cd '..';
                      else

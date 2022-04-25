@@ -28,21 +28,35 @@ function initBrowserRootPath()
 % along with TriDFusion.  If not, see <http://www.gnu.org/licenses/>.  
 
     browserRootPath('set', '');
-             
-    sRootDir = pwd;
-    if sRootDir(end) ~= '\' || ...
-       sRootDir(end) ~= '/'     
-        sRootDir = [sRootDir '/'];
-    end   
-        
-    if isfile(sprintf('%sdisclamer.txt', sRootDir))
+    	
+    if isdeployed 
+        % User is running an executable in standalone mode. 
+        [~, result] = system('set PATH');
+        sRootDir = char(regexpi(result, 'Path=(.*?);', 'tokens', 'once'));
+        if sRootDir(end) ~= '\' || ...
+           sRootDir(end) ~= '/'     
+            sRootDir = [sRootDir '/'];
+        end         
         browserRootPath('set', sRootDir);
-    else 
-        sRootDir = fileparts(mfilename('fullpath'));
-        sRootDir = erase(sRootDir, 'dicomDBBrowser_core');        
+    else
+
+        sRootDir = pwd;
+        if sRootDir(end) ~= '\' || ...
+           sRootDir(end) ~= '/'     
+            sRootDir = [sRootDir '/'];
+        end   
 
         if isfile(sprintf('%sdisclamer.txt', sRootDir))
             browserRootPath('set', sRootDir);
-        end
-    end    
+        else 
+            sRootDir = fileparts(mfilename('fullpath'));
+            sRootDir = erase(sRootDir, 'dicomDBBrowser_core');        
+
+            if isfile(sprintf('%sdisclamer.txt', sRootDir))
+                browserRootPath('set', sRootDir);
+            end
+        end 
+    end
+
+
 end
