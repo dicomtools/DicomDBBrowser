@@ -14,5 +14,8 @@
 * https://github.com/dicomtools/TriDFusion
 * https://github.com/dicomtools/DicomMultiFilesEditor
 
+## Optional:
+
+* https://github.com/cerr/CERR
 
 See https://daniellafontaine.com/ for more information
