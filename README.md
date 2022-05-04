@@ -9,6 +9,10 @@
 * Multi-Modality DICOM Editor with configurable dictionary
 * DICOM Multi-Modality & Multidimensional Image Viewer
 
+## MATLAB version
+
+* MATLAB 2020a
+
 ## Requirement:
 
 * https://github.com/dicomtools/TriDFusion
