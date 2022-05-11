@@ -31,6 +31,7 @@ function browserMainWindowMenu()
 % along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
     mFile = uimenu(dlgBrowserWindowsPtr('get'),'Label','File');
+    uimenu(mFile,'Label', 'Exit' ,'Callback', 'close');
     
     mEdit = uimenu(dlgBrowserWindowsPtr('get'),'Label','Edit');
     uimenu(mEdit,'Label', 'Browser Properties...', 'Callback', @setBrowserOptionsCallback);    
