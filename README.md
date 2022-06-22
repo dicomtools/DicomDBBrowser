@@ -3,6 +3,8 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/dicomtools/DicomDBBrowser)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/dicomtools/DicomDBBrowser/blob/main/LICENSE)
 
+![DicomDBBrowser](images/DBBrowserDiagram.png)
+
 ## Features:
 
 * No limit of capacity data storage
