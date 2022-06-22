@@ -9,14 +9,7 @@
 * Multi-Modality DICOM Editor with configurable dictionary
 * DICOM Multi-Modality & Multidimensional Image Viewer
 
-## MATLAB version
-
-* MATLAB 2020a
-
 ## Requirement:
-
-* https://github.com/dicomtools/TriDFusion
-* https://github.com/dicomtools/DicomMultiFilesEditor
 
 * MATLAB Runtime 2020a (9.8):
 * https://www.mathworks.com/products/compiler/matlab-runtime.html
@@ -24,6 +17,7 @@
 
 ## Optional:
 
-* https://github.com/cerr/CERR
+* https://github.com/dicomtools/TriDFusion
+* https://github.com/dicomtools/DicomMultiFilesEditor
 
 See https://daniellafontaine.com/ for more information
