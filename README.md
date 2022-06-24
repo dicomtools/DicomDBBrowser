@@ -7,7 +7,7 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/dicomtools/DicomDBBrowser/blob/main/LICENSE)
 
 ![DicomDBBrowser](images/DicomDatabaseBrowserMain.jpg)
-![DicomDBBrowser](images/DBBrowserDiagram.png)
+![DicomDBBrowser](images/DicomDatabaseBrowserWorkflow.png)
 
 ## Features:
 
