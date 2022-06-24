@@ -1,6 +1,6 @@
 <div align="center">
   <h1>DICOM Database Browser</h1>
-  <p><strong>The DICOM Database Browser</strong> is a a DICOM series browser for research provided by <a href="https://daniellafontaine.com/">Daniel Lafontaine</a>.</p>
+  <p><strong>The DICOM Database Browser</strong> is a a DICOM series browser for research provided by <a href="https://daniellafontaine.com/projects/dicom-db-browser/">Daniel Lafontaine</a>.</p>
 </div>
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/dicomtools/DicomDBBrowser)
