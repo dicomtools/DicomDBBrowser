@@ -35,7 +35,23 @@ function browserMainWindowMenu()
     
     mEdit = uimenu(dlgBrowserWindowsPtr('get'),'Label','Edit');
     uimenu(mEdit,'Label', 'Browser Properties...', 'Callback', @setBrowserOptionsCallback);    
+    
+    sRootPath = browserRootPath('get');
+    
+    mExtension = uimenu(dlgBrowserWindowsPtr('get'),'Label','Extension');
 
+    atListing = dir(sprintf('%sextension/*.xml', sRootPath));   
+    for ll=1:numel(atListing)
+        sCurrentXml = strtrim(sprintf('%sextension/%s', sRootPath, atListing(ll).name)); 
+        tCurrentXml = xml2struct(sCurrentXml);
+        
+        if isfield(tCurrentXml.xmlParametersGui, 'guiName')
+            sGuiName = tCurrentXml.xmlParametersGui.guiName.Text;
+            uimenu(mExtension,'Label', sGuiName, 'UserData', sCurrentXml, 'Callback', @setBrowserExtensionCallback);            
+        end
+        
+    end
+    
     mHelp = uimenu(dlgBrowserWindowsPtr('get'),'Label','Help');
     uimenu(mHelp,'Label', 'User Manual', 'Callback', @helpBrowserCallback);
     uimenu(mHelp,'Label', 'About', 'Callback', @aboutBrowserCallback, 'Separator','on');
