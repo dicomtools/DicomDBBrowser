@@ -30,10 +30,9 @@ function setBrowserExtensionCallback(hObject, ~)
 
     sXmlFileName = get(hObject, 'UserData');
     
+    asPath = '';
     
     if numel(gsBrowserMainWindowDisplayPtr('get')) 
-
-        asPath = '';
 
         gadOffset = gadBrowserOffsetPtr('get');
         gtDisplay = gtBrowserDisplayPtr('get');
@@ -60,7 +59,10 @@ function setBrowserExtensionCallback(hObject, ~)
 
     end
        
-
-    xmlParametersGui(asPath{:}, sprintf('[-p%s]',sXmlFileName));
+    if ~isempty(asPath)
+        xmlParametersGui(asPath{:}, sprintf('[-p%s]',sXmlFileName));
+    else
+        xmlParametersGui(sprintf('[-p%s]',sXmlFileName));
+    end
     
 end 

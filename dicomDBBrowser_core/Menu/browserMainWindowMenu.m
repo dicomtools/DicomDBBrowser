@@ -38,7 +38,7 @@ function browserMainWindowMenu()
     
     sRootPath = browserRootPath('get');
     
-    mExtension = uimenu(dlgBrowserWindowsPtr('get'),'Label','Extension');
+    mExtension = [];
 
     atListing = dir(sprintf('%sextension/*.xml', sRootPath));   
     for ll=1:numel(atListing)
@@ -46,6 +46,11 @@ function browserMainWindowMenu()
         tCurrentXml = xml2struct(sCurrentXml);
         
         if isfield(tCurrentXml.xmlParametersGui, 'guiName')
+            
+            if isempty(mExtension)
+                mExtension = uimenu(dlgBrowserWindowsPtr('get'),'Label','Extension');
+            end
+            
             sGuiName = tCurrentXml.xmlParametersGui.guiName.Text;
             uimenu(mExtension,'Label', sGuiName, 'UserData', sCurrentXml, 'Callback', @setBrowserExtensionCallback);            
         end
