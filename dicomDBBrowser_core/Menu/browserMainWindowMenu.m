@@ -43,7 +43,7 @@ function browserMainWindowMenu()
     atListing = dir(sprintf('%sextension/*.xml', sRootPath));   
     for ll=1:numel(atListing)
         sCurrentXml = strtrim(sprintf('%sextension/%s', sRootPath, atListing(ll).name)); 
-        tCurrentXml = xml2struct(sCurrentXml);
+        tCurrentXml = browser_xml2struct(sCurrentXml);
         
         if isfield(tCurrentXml.xmlParametersGui, 'guiName')
             
