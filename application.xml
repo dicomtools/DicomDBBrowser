@@ -2,7 +2,11 @@
 <dicomDBBrowserProtocol version="1.0">
 	
 	<displayName>Your application list</displayName>
-	<command>"%ProgramFiles%\DicomDBBrowser\application\Other\yourSoftwareExample.bat"</command>
+	<command>".\Other\yourSoftwareExample.bat"</command>
 	<argument>null</argument>
+	
+	<displayName>DICOM Dump Header</displayName>
+	<command>".\Other\dicomDumpHeader\dicomDumpHeader.exe"</command>
+	<argument>null</argument>	
 	
 </dicomDBBrowserProtocol>
