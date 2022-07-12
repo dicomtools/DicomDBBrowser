@@ -69,10 +69,11 @@ function browserDicomViewerCallback(~, ~)
                     sTriDFusion = sprintf('%sTriDFusion/', sRootPath);
 
                     cd(sTriDFusion);
-                    if exist('TriDFusion.exe', 'file') % Windows
+                    if ispc % Windows
                         system( char(strcat('TriDFusion.exe', {' '}, sPath, '&')) );
-                    elseif exist('run_TriDFusion.sh', 'file') % Linux
+                    elseif isunix % Linux
                         system( char(strcat( sprintf('%s/run_TriDFusion.sh', sTriDFusion), {' '}, sPath, '&')) );
+                    else % Mac not yet supported
                     end
                     cd '..';                        
                 else    

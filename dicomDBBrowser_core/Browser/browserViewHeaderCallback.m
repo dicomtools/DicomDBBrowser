@@ -52,10 +52,12 @@ function browserViewHeaderCallback(~, ~)
                         sDicomMultiFilesEditor = sprintf('%sdicomMultiFilesEditor/', sRootPath);
 
                         cd(sDicomMultiFilesEditor);
-                        if exist('dicomMultiFilesEditor.exe', 'file') % Windows
+                        if ispc % Windows
                             system( char(strcat('dicomMultiFilesEditor.exe', {' '}, sPath, ' [-m] [-h1] &')));
-                        elseif exist('run_dicomMultiFilesEditor.sh', 'file') % Linux
+                        elseif isunix % Linux
                             system( char(strcat( sprintf('%s/run_dicomMultiFilesEditor.sh', sDicomMultiFilesEditor), {' '}, sPath, ' [-r./temp] [-m] [-h1] &')));
+                        else % Mac not yet supported
+                            
                         end
                         cd '..';
                      else
