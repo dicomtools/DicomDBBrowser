@@ -58,11 +58,43 @@ function setBrowserExtensionCallback(hObject, ~)
         end
 
     end
-       
-    if ~isempty(asPath)
-        xmlParametersGui(asPath{:}, sprintf('[-p%s]',sXmlFileName));
-    else
-        xmlParametersGui(sprintf('[-p%s]',sXmlFileName));
-    end
     
+    try
+        if browserMultiThread('get')
+
+            sRootPath = browserRootPath('get');
+            sXmlParametersGui = sprintf('%sxmlParametersGui/', sRootPath);
+
+            cd(sXmlParametersGui);
+            if ispc % Windows
+                if ~isempty(asPath)
+                    system( char(strcat('xmlParametersGui.exe',  {' '}, asPath{:}, sprintf(' [-p%s] &', sXmlFileName) )));
+                else
+                    system( char(strcat('xmlParametersGui.exe',  {' '}, sprintf('[-p%s] &', sXmlFileName) )));
+                end
+            elseif isunix % Linux
+                if ~isempty(asPath)
+                    system( char(strcat( sprintf('%s/run_xmlParametersGui.sh', sXmlParametersGui),  {' '}, asPath{:}, sprintf('[-p%s] &', sXmlFileName) )));
+                else            
+                    system( char(strcat( sprintf('%s/run_xmlParametersGui.sh', sXmlParametersGui), {' '}, sprintf('[-p%s] &', sXmlFileName) )));
+                end
+            else % Mac not yet supported
+
+            end
+            cd '..';
+        else
+            if ~isempty(asPath)
+                xmlParametersGui(asPath{:}, sprintf('[-p%s]', sXmlFileName));
+            else
+                xmlParametersGui(sprintf('[-p%s]', sXmlFileName));
+            end
+        end
+    catch
+        browserProgressBar(1, 'Error: setBrowserExtensionCallback(): error(s) occur while trying to build GUI!');
+        h = msgbox('Error: setBrowserExtensionCallback(): error(s) occur while trying to build GUI!', 'Error');  
+
+    %                            javaFrame = get(h, 'JavaFrame');
+    %                            javaFrame.setFigureIcon(javax.swing.ImageIcon('./logo.png'));
+    end   
+      
 end 
