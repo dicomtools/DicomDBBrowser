@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmlParametersGui version="1.0">
+	<guiName>Protocol Example</guiName>
+	<defaultProtocol>1</defaultProtocol>
+
+	<protocol>
+		<protocolName>Default Protocol</protocolName>
+	    <exportFile>c:\temp\exportedParameters.mat</exportFile>
+		<functionName></functionName >
+
+		<columns>
+
+			<columnName>Image Properties</columnName> 
+            <columnSize>300</columnSize>
+			<fields>
+				<field>
+					<fieldOrder>1</fieldOrder>				
+					<fieldName>FOV</fieldName> 
+					<fieldType>edit</fieldType>
+					<fieldValue>700</fieldValue>
+				</field>	
+				<field>
+					<fieldOrder>2</fieldOrder>				
+					<fieldName>Matrix</fieldName> 
+					<fieldType>edit</fieldType>
+					<fieldValue>256</fieldValue>
+				</field>					
+				<field>
+					<fieldOrder>3</fieldOrder>				
+					<fieldName>Origin Offset X</fieldName> 
+					<fieldType>edit</fieldType>
+					<fieldValue>0</fieldValue>
+				</field>					
+				<field>
+					<fieldOrder>4</fieldOrder>				
+					<fieldName>Origin Offset Y</fieldName> 
+					<fieldType>edit</fieldType>
+					<fieldValue>0</fieldValue>
+				</field>				
+			</fields>							
+			
+			<columnName>Base Algorithm and Convergence</columnName> 
+            <columnSize>300</columnSize>
+			<fields>
+				<field>
+					<fieldOrder>1</fieldOrder>				
+					<fieldName>Iterations</fieldName> 
+					<fieldType>edit</fieldType>
+					<fieldValue>16</fieldValue>
+				</field>			
+				<field>			
+					<fieldOrder>2</fieldOrder>				
+					<fieldName>Subsets</fieldName>
+					<fieldType>edit</fieldType>			
+					<fieldValue>16</fieldValue>
+				</field>			
+				<field>			
+					<fieldOrder>3</fieldOrder>				
+					<fieldName>TOF</fieldName>
+					<fieldType>checkbox</fieldType>	
+					<fieldValue>1</fieldValue>
+				</field>
+				<field>			
+					<fieldOrder>4</fieldOrder>				
+					<fieldName>PSF</fieldName>
+					<fieldType>checkbox</fieldType>				
+					<fieldValue>1</fieldValue>
+				</field>
+            </fields>
+			
+			<columnName>Regularization/postfiltering</columnName>
+            <columnSize>300</columnSize>
+			<fields>
+				<field>			
+					<fieldOrder>1</fieldOrder>				
+					<fieldName>Postfiltering</fieldName>
+					<fieldType>text</fieldType>
+					<field>			
+						<fieldOrder>2</fieldOrder>				
+						<fieldName>Global (on/off)</fieldName>
+						<fieldType>checkbox</fieldType>
+						<fieldValue>1</fieldValue>					
+						<field>			
+							<fieldOrder>3</fieldOrder>				
+							<fieldName>Parameters(s)</fieldName>
+							<fieldType>edit</fieldType>
+							<fieldValue>test</fieldValue>												
+						</field>						
+					</field>								
+				</field>			
+				<field>			
+					<fieldOrder>4</fieldOrder>				
+					<fieldName>Regularization (number)</fieldName>
+					<fieldType>edit</fieldType>
+					<fieldValue>2</fieldValue>												
+				</field>	
+				<field>			
+					<fieldOrder>5</fieldOrder>				
+					<fieldName>Global Reg weights</fieldName>
+					<fieldType>edit</fieldType>
+					<fieldValue></fieldValue>												
+				</field>
+				<field>			
+					<fieldOrder>6</fieldOrder>				
+					<fieldName>Reg 1-type</fieldName>
+					<fieldType>popup</fieldType>
+					<fieldValue>value1,value2</fieldValue>												
+					<fieldOffset>1</fieldOffset>
+				</field>			
+			</fields>
+			
+		</columns>
+	</protocol>
+ 
+ 	<protocol>
+		<protocolName>Default Protocol2</protocolName>
+	    <exportFile>c:\temp\xmlParams.mat</exportFile>
+		<functionName></functionName >
+
+		<columns>
+			<columnName>Base Algorithm and Convergence</columnName> 
+            <columnSize>300</columnSize>
+			<fields>	
+				<field>
+					<fieldOrder>2</fieldOrder>				
+					<fieldName>Patient Name</fieldName> 
+					<fieldType>dicomread</fieldType>
+					<group>0010</group>
+					<element>0010</element>
+				</field>				
+				<field>
+					<fieldOrder>3</fieldOrder>				
+					<fieldName>Iterations</fieldName> 
+					<fieldType>edit</fieldType>
+					<fieldValue>32</fieldValue>
+				</field>			
+				<field>			
+					<fieldOrder>4</fieldOrder>				
+					<fieldName>Subsets</fieldName>
+					<fieldType>edit</fieldType>			
+					<fieldValue>16</fieldValue>
+				</field>			
+				<field>			
+					<fieldOrder>5</fieldOrder>				
+					<fieldName>TOF</fieldName>
+					<fieldType>checkbox</fieldType>	
+					<fieldValue>1</fieldValue>
+				</field>
+				<field>			
+					<fieldOrder>6</fieldOrder>				
+					<fieldName>PSF</fieldName>
+					<fieldType>checkbox</fieldType>				
+					<fieldValue>1</fieldValue>
+				</field>
+            </fields>
+			
+			<columnName>Regularization/postfiltering</columnName>
+            <columnSize>300</columnSize>
+			<fields>
+				<field>			
+					<fieldOrder>1</fieldOrder>				
+					<fieldName>Postfiltering (on/off)</fieldName>
+					<fieldType>checkbox</fieldType>
+					<fieldValue>1</fieldValue>											
+				</field>			
+				<field>			
+					<fieldOrder>2</fieldOrder>				
+					<fieldName>Regularization (number)</fieldName>
+					<fieldType>edit</fieldType>
+					<fieldValue>2</fieldValue>												
+				</field>	
+				<field>			
+					<fieldOrder>3</fieldOrder>				
+					<fieldName>Global Reg weights</fieldName>
+					<fieldType>edit</fieldType>
+					<fieldValue></fieldValue>												
+				</field>
+				<field>			
+					<fieldOrder>4</fieldOrder>				
+					<fieldName>Reg 1-type</fieldName>
+					<fieldType>popup</fieldType>
+					<fieldValue>value1,value2</fieldValue>												
+					<fieldOffset>2</fieldOffset>
+				</field>			
+			</fields>
+			
+		</columns>
+	</protocol>   
+    
+</xmlParametersGui>
