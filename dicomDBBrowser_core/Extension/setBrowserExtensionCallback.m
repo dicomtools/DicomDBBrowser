@@ -74,7 +74,7 @@ function setBrowserExtensionCallback(hObject, ~)
                 end
             elseif isunix % Linux
                 if ~isempty(asPath)
-                    system( char(strcat( sprintf('%s/run_xmlParametersGui.sh', sXmlParametersGui),  {' '}, asPath{:}, sprintf('[-p%s] &', sXmlFileName) )));
+                    system( char(strcat( sprintf('%s/run_xmlParametersGui.sh', sXmlParametersGui), {' '}, asPath{:}, {' '}, sprintf('[-p%s] &', sXmlFileName) )));
                 else            
                     system( char(strcat( sprintf('%s/run_xmlParametersGui.sh', sXmlParametersGui), {' '}, sprintf('[-p%s] &', sXmlFileName) )));
                 end
