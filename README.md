@@ -35,6 +35,6 @@
 
 ## Installation
 
-* https://github.com/dicomtools/DicomDBBrowser/wiki
+* https://github.com/dicomtools/DicomDBBrowser/wiki/Source-code-version-of-DicomDBBrowser
 
 Visit https://daniellafontaine.com/ for more information
