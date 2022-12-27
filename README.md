@@ -9,7 +9,7 @@
 ![DicomDBBrowser](images/DicomDatabaseBrowserMain.jpg)
 ![DicomDBBrowser](images/DicomDatabaseBrowserDiagram.png)
 
-## Features:
+## Features
 
 * No limit of capacity data storage
 * Protocol driven database & applications list. DICOM Database Browser allows a typical research department to start their own developed applications
@@ -22,12 +22,12 @@
 
 * MATLAB 2020a
 
-## Requirement:
+## Requirement
 
 * MATLAB Runtime 2020a (9.8):
 * https://www.mathworks.com/products/compiler/matlab-runtime.html
 
-## Optional:
+## Optional
 
 * https://github.com/dicomtools/TriDFusion
 * https://github.com/dicomtools/DicomMultiFilesEditor
@@ -36,5 +36,7 @@
 ## Installation
 
 * https://github.com/dicomtools/DicomDBBrowser/wiki/Source-code-version-of-DicomDBBrowser
+
+## Reference
 
 Visit https://daniellafontaine.com/ for more information
