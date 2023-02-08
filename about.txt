@@ -1,4 +1,4 @@
-DICOM Database Browser Version 1.0
+DICOM Database Browser Version 1.1
 
 Disclaimer Notice:
 

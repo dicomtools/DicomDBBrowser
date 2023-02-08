@@ -20,11 +20,11 @@
 
 ## MATLAB tested version
 
-* MATLAB 2020a
+* MATLAB 2022a
 
 ## Requirement
 
-* MATLAB Runtime 2020a (9.8):
+* MATLAB Runtime 2022a (9.12):
 * https://www.mathworks.com/products/compiler/matlab-runtime.html
 
 ## Optional
