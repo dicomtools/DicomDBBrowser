@@ -59,7 +59,7 @@ function initBrowserDisclamer()
 %            javaFrame.setFigureIcon(javax.swing.ImageIcon('./logo.png'));
 
         waitfor(h);
-
+        
     end
 
 end

@@ -1,5 +1,5 @@
-function initBrowserJFolderChooser()
-%function initBrowserJFolderChooser()
+function initBrowserJFolderChooser(uiJFileChooser)
+%function initBrowserJFolderChooser(uiJFileChooser)
 %Init Java Folder Chooser.
 %See DicomDBBrowser.doc (or pdf) for more information about options.
 %
@@ -30,17 +30,22 @@ function initBrowserJFolderChooser()
 % You should have received a copy of the GNU General Public License
 % along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
- %   [hjFileChooser, ~] = javacomponent('com.jidesoft.swing.FolderChooser', dimension, uiBrowserMainWindowPtr('get'));
 
-    hjFileChooser = com.jidesoft.swing.FolderChooser;           
+    hjChooser = com.jidesoft.swing.FolderChooser;           
+%    hjChooser = javax.swing.JFileChooser;           
 
-    hjFileChooser.setCurrentDirectory(java.io.File(pwd));
-    hjFileChooser.setMultiSelectionEnabled(false);
-    hjFileChooser.setAvailableButtons(28);
-    hjFileChooser.setRecentListVisible(false);
-    hjFileChooser.setNavigationFieldVisible(true);
+%    hjChooser.setCurrentDirectory(java.io.File(pwd));
+    hjChooser.setMultiSelectionEnabled(false);
+    hjChooser.setAvailableButtons(28);
+    hjChooser.setRecentListVisible(false);
+    hjChooser.setNavigationFieldVisible(true);
+    hjChooser.setBackground(java.awt.Color.white);
+    hjChooser.setFileSelectionMode(javax.swing.JFileChooser.DIRECTORIES_ONLY);
 
-    hjBrowserFileChooserPtr('set', hjFileChooser);
+    [hjChooser, hContainer] = javacomponent(hjChooser, [0,0,1,1], uiJFileChooser);
 
- %   hjFileChooser.control = false; 
+    set(hContainer, 'units','normalized','position',[0 0 1 1.0]);
+
+    hjBrowserFileChooserPtr('set', hjChooser);
+
 end

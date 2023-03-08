@@ -32,9 +32,10 @@ function browserCurrentDirectoryCallback(~, ~)
 
     hjFileChooser = hjBrowserFileChooserPtr('get');
 
-    hjFileChooser.setCurrentDirectory(java.io.File(pwd));
-    hjFileChooser.updateUI();
+%    hjFileChooser.setCurrentDirectory(java.io.File(pwd));
+%    hjFileChooser.updateUI();
     hjFileChooser.setCurrentDirectory(java.io.File(get(edtBrowserCurrentDirectoryPtr('get'), 'String')));
+    hjFileChooser.updateUI();
 
     browserUpdateDirectoryWindow(get(edtBrowserCurrentDirectoryPtr('get'), 'String'));
 end

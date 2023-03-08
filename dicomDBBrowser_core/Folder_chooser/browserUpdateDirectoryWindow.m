@@ -30,14 +30,20 @@ function browserUpdateDirectoryWindow(sDir)
 % You should have received a copy of the GNU General Public License
 % along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
-    aList = '';
-    aDirList = dir(sDir);
-    for ii=1:numel(aDirList)
-        if aDirList(ii).isdir && ~strcmpi(aDirList(ii).name, '.')
-            aList{numel(aList)+1} = aDirList(ii).name;
-        end
-    end
+%    aList = '';
+%    aDirList = dir(sDir);
+%    for ii=1:numel(aDirList)
+%        if aDirList(ii).isdir && ~strcmpi(aDirList(ii).name, '.')
+%            aList{numel(aList)+1} = aDirList(ii).name;
+%        end
+%    end
 
-    set(lbBrowserDirectoryWindowPtr('get'), 'String', aList);
-    set(lbBrowserDirectoryWindowPtr('get'), 'Value' , 1);
+  %  set(lbBrowserDirectoryWindowPtr('get'), 'String', aList);
+  %  set(lbBrowserDirectoryWindowPtr('get'), 'Value' , 1);
+
+    hjFileChooser = hjBrowserFileChooserPtr('get');
+
+    hjFileChooser.setCurrentDirectory(java.io.File(sDir))
+
+
 end
