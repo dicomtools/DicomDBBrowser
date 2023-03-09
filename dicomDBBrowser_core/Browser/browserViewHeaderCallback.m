@@ -52,6 +52,7 @@ function browserViewHeaderCallback(~, ~)
                         sDicomMultiFilesEditor = sprintf('%sdicomMultiFilesEditor/', sRootPath);
 
                         cd(sDicomMultiFilesEditor);
+
                         if ispc % Windows
                             system( char(strcat('dicomMultiFilesEditor.exe', {' '}, sPath, ' [-m] [-h1] &')));
                         elseif isunix % Linux
@@ -59,8 +60,14 @@ function browserViewHeaderCallback(~, ~)
                         else % Mac not yet supported
                             
                         end
+
                         cd '..';
                      else
+                        sRootPath = browserRootPath('get');
+                        sDicomMultiFilesEditor = sprintf('%sdicomMultiFilesEditor/', sRootPath);
+
+                        cd(sDicomMultiFilesEditor);
+
                         if ~isempty(findobj('Name','DICOM Multi-Files Editor'))
                             answer = myquestdlg('browserMultiThreading is currently turn off, Only one instance of DICOM Multi-Files Editor can run at the time. You can activate the Multi Threading from the options menu. Continue will close the open instance.', 'Warning', 'Continue','Return','Continue');
                             switch answer                       
@@ -72,6 +79,9 @@ function browserViewHeaderCallback(~, ~)
                         end
                         clear dicomMultiFilesEditor;
                         dicomMultiFilesEditor(char(sPath), '[-m]', '[-h1]', '[-i]');
+                        
+                        cd '..';
+
                      end
                  catch
                         browserProgressBar(1, 'Error: browserViewHeaderCallback(): error(s) occur while trying to view the header!');

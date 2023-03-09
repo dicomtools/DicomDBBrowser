@@ -77,6 +77,10 @@ function browserDicomViewerCallback(~, ~)
                     end
                     cd '..';                        
                 else    
+                    sRootPath = browserRootPath('get');
+                    sTriDFusion = sprintf('%sTriDFusion/', sRootPath);     
+
+                    cd(sTriDFusion);
 
                     if ~isempty(findobj('Name','TriDFusion (3DF) Image Viewer'))
                         answer = myquestdlg('browserMultiThreading is currently turn off, Only one instance of TriDFusion Image Viewer can run at the time. You can activate the Multi Threading from the options menu. Continue will close the open instance.', 'Warning', 'Continue','Return','Continue');
@@ -89,6 +93,8 @@ function browserDicomViewerCallback(~, ~)
                     end
                     clear TriDFusion;
                     TriDFusion( sPath{:}, '[-i]');
+                    
+                    cd '..';                        
                 end
 
             catch

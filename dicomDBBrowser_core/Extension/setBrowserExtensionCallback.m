@@ -66,11 +66,12 @@ function setBrowserExtensionCallback(hObject, ~)
             sXmlParametersGui = sprintf('%sxmlParametersGui/', sRootPath);
 
             cd(sXmlParametersGui);
+
             if ispc % Windows
                 if ~isempty(asPath)
-                    system( char(strcat('xmlParametersGui.exe',  {' '}, asPath{:}, sprintf(' [-p%s] &', sXmlFileName) )));
+                    system( char(strcat(sprintf('%s/xmlParametersGui.exe', sXmlParametersGui),  {' '}, asPath{:}, sprintf(' [-p%s] &', sXmlFileName) )));
                 else
-                    system( char(strcat('xmlParametersGui.exe',  {' '}, sprintf('[-p%s] &', sXmlFileName) )));
+                    system( char(strcat(sprintf('%s/xmlParametersGui.exe',  sXmlParametersGui), {' '}, sprintf('[-p%s] &', sXmlFileName) )));
                 end
             elseif isunix % Linux
                 if ~isempty(asPath)
@@ -81,13 +82,21 @@ function setBrowserExtensionCallback(hObject, ~)
             else % Mac not yet supported
 
             end
+
             cd '..';
         else
+            sRootPath = browserRootPath('get');
+            sXmlParametersGui = sprintf('%sxmlParametersGui/', sRootPath);
+
+            cd(sXmlParametersGui);
+
             if ~isempty(asPath)
                 xmlParametersGui(asPath{:}, sprintf('[-p%s]', sXmlFileName));
             else
                 xmlParametersGui(sprintf('[-p%s]', sXmlFileName));
             end
+            
+            cd '..';
         end
     catch
         browserProgressBar(1, 'Error: setBrowserExtensionCallback(): error(s) occur while trying to build GUI!');
