@@ -33,7 +33,7 @@ function browserDoubleClickAction(sAppName)
     if     strcmpi(sAppName, 'View Header')
 
         browserViewHeaderCallback();
-    elseif strcmpi(sAppName, 'TriDFusion')   
+    elseif strcmpi(sAppName, 'TriDFusion (3DF)')   
 
         browserDicomViewerCallback();
     elseif strcmpi(sAppName, 'CERR')   
