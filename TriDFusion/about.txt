@@ -1,4 +1,4 @@
-TriDFusion (3DF) Image Viewer Version 1.8
+TriDFusion (3DF) Image Viewer Version 1.9
 
 Disclaimer Notice:
 
@@ -23,6 +23,7 @@ Contributors:
    Aditya Apte
    Adam Kesner	
    Joseph O'Donoghue
+   Alexandre Franca Velo
    Simone Krebs
 
 Memorial Sloan Kettering 
