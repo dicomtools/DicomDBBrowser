@@ -75,27 +75,27 @@ To use TriDFusion (3DF) Graphical User Interface, type TriDFusion() in Matlab co
 
 MATLAB command:
 
-* Note: Option settings must fit on one line and can contain at most one semicolon.
-* -3d    : Display 2D View using 3D engine.
-* -b     : Display 2D Border.
-* -i     : TriDFusion is integrated with DIDOM Database Browser.
-* -fusion: Activate the fusion. *Requires 2 volumes.
-* -mip   : Activate the 3D MIP. *The order of activation of the MIP, vol, and iso dictates the emphasis of each feature of the 3D resulting image.
-* -vol   : Activate the 3D volume rendering. *The order of activation of the MIP, vol, and iso dictates the emphasis of each feature of the 3D resulting image.
-* -iso   : Activate the 3D iso surface. *The order of activation of the MIP, vol, and iso dictates the emphasis of each feature of the 3D resulting image.
-* -w name: Execute a workflow.
-* -r path: Set a destination path. 
+	* Note: Option settings must fit on one line and can contain at most one semicolon.
+	* -3d    : Display 2D View using 3D engine.
+	* -b     : Display 2D Border.
+	* -i     : TriDFusion is integrated with DIDOM Database Browser.
+	* -fusion: Activate the fusion. *Requires 2 volumes.
+	* -mip   : Activate the 3D MIP. *The order of activation of the MIP, vol, and iso dictates the emphasis of each feature of the 3D resulting image.
+	* -vol   : Activate the 3D volume rendering. *The order of activation of the MIP, vol, and iso dictates the emphasis of each feature of the 3D resulting image.
+	* -iso   : Activate the 3D iso surface. *The order of activation of the MIP, vol, and iso dictates the emphasis of each feature of the 3D resulting image.
+	* -w name: Execute a workflow.
+	* -r path: Set a destination path. 
 
-* Example:
-* TriDFusion(); Open the graphical user interface.
-* TriDFusion('path_to_dicom_series_folder'); Open the graphical user interface with a DICOM image.
-* TriDFusion('path_to_dicom_series_folder_1', 'path_to_dicom_series_folder_2');  Open the graphical user interface with 2 DICOM images.
-* TriDFusion('path_to_dicom_series_folder_1', 'path_to_dicom_series_folder_2', '-fusion'); Open the graphical user interface with 2 DICOM images and fuse them.
-* TriDFusion('path_to_dicom_series_folder', '-mip'); Open the graphical user interface with a DICOM image and create a 3D MIP.
-* TriDFusion('path_to_dicom_series_folder', '-iso'); Open the graphical user interface with a DICOM image and create a 3D iso surface model.
-* TriDFusion('path_to_dicom_series_folder', '-vol'); Open the graphical user interface with a DICOM image and create a 3D volume rendering.
-* TriDFusion('path_to_dicom_series_folder', '-mip', '-iso', '-vol'); Open the graphical user interface with a DICOM image and create a fusion of a 3D MIP, iso surface, and volume rendering. Any combination can be used. 
-* TriDFusion('path_to_dicom_series_folder', '-w', 'workflow_name'); Open the graphical user interface with a DICOM image and execute a workflow. Refer to processWorkflow.m for a list of available options. Refer to dicomViewer.m for workflows the default values. 
+	* Example:
+	* TriDFusion(); Open the graphical user interface.
+	* TriDFusion('path_to_dicom_series_folder'); Open the graphical user interface with a DICOM image.
+	* TriDFusion('path_to_dicom_series_folder_1', 'path_to_dicom_series_folder_2');  Open the graphical user interface with 2 DICOM images.
+	* TriDFusion('path_to_dicom_series_folder_1', 'path_to_dicom_series_folder_2', '-fusion'); Open the graphical user interface with 2 DICOM images and fuse them.
+	* TriDFusion('path_to_dicom_series_folder', '-mip'); Open the graphical user interface with a DICOM image and create a 3D MIP.
+	* TriDFusion('path_to_dicom_series_folder', '-iso'); Open the graphical user interface with a DICOM image and create a 3D iso surface model.
+	* TriDFusion('path_to_dicom_series_folder', '-vol'); Open the graphical user interface with a DICOM image and create a 3D volume rendering.
+	* TriDFusion('path_to_dicom_series_folder', '-mip', '-iso', '-vol'); Open the graphical user interface with a DICOM image and create a fusion of a 3D MIP, iso surface, and volume rendering. Any combination can be used. 
+	* TriDFusion('path_to_dicom_series_folder', '-w', 'workflow_name'); Open the graphical user interface with a DICOM image and execute a workflow. Refer to processWorkflow.m for a list of available options. Refer to dicomViewer.m for workflows the default values. 
 
 
 DICOM directory structure:
@@ -120,8 +120,24 @@ PY-Radiomics
 https://pyradiomics.readthedocs.io/en/latest/installation.html
 
 ### Monte Carlo particle transport engines 
-PHITS
+PHITS  (Tested version: 330A)
 https://phits.jaea.go.jp/rirekie.html
+
+Required Python Module Installation Instructions
+
+	TriDFusion will execute the Python scripts TriDFusion\kernel\Dose_Simulation_Controller.py, PHITS_DoseEngine.py, LED_DoseEngine.py and ICRP107_RadionuclideData.py. Please ensure that all required modules are installed. You can install them using the following commands:
+
+    numpy: Execute the command pip install numpy to install the NumPy library, which is essential for numerical computations.
+
+    nrrd: Install the nrrd library, used for reading and writing NRRD files, by running pip install pynrrd.
+
+    Other Dependencies: Make sure you have the following standard Python modules installed:
+        sys: No installation required as it's part of the Python standard library.
+        math: No installation required as it's part of the Python standard library.
+        os: No installation required as it's part of the Python standard library.
+        shutil: No installation required as it's part of the Python standard library.
+        subprocess: No installation required as it's part of the Python standard library.
+        argparse: No installation required as it's part of the Python standard library.
 
 ## References 
 
