@@ -44,8 +44,10 @@ function initBrowserJFolderChooser(uiJFileChooser)
 
     [hjChooser, hContainer] = javacomponent(hjChooser, [0,0,1,1], uiJFileChooser);
 
-    set(hContainer, 'units','normalized','position',[0 0 1 1.0]);
+    aFileChooserPosition = get(uiJFileChooser, 'Position');
 
-    hjBrowserFileChooserPtr('set', hjChooser);
+    set(hContainer, 'units','pixels','position', [0 0 aFileChooserPosition(3) aFileChooserPosition(4)]);
+
+    hjBrowserFileChooserPtr('set', hjChooser, hContainer);
 
 end

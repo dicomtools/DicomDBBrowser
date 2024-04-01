@@ -1,5 +1,5 @@
-function aObject = hjBrowserFileChooserPtr(sAction, aValue)
-%function aObject = hjBrowserFileChooserPtr(sAction, aValue)
+function [hjChooser, hContainer] = hjBrowserFileChooserPtr(sAction, hjChooser, hContainer)
+%function [hjChooser, hContainer] = hjBrowserFileChooserPtr(sAction, hjChooser, hContainer)
 %Get\Set Listbox Directory Window Pointer.
 %See dicomDBBrowser.doc (or pdf) for more information about options.
 %
@@ -30,11 +30,14 @@ function aObject = hjBrowserFileChooserPtr(sAction, aValue)
 % You should have received a copy of the GNU General Public License
 % along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
-    persistent paObject; 
+    persistent phjChooser; 
+    persistent phContainer; 
 
     if strcmpi('set', sAction)
-       paObject = aValue;            
+       phjChooser  = hjChooser; 
+       phContainer = hContainer;
     end      
     
-    aObject = paObject;
+    hjChooser  = phjChooser;
+    hContainer = phContainer;
 end

@@ -30,7 +30,7 @@ function initBrowserGlobal()
 % You should have received a copy of the GNU General Public License
 % along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
-    hjBrowserFileChooserPtr('set', []);
+    hjBrowserFileChooserPtr('set', [], []);
     
     uiBrowserProgressBarPtr('set', []);
 
