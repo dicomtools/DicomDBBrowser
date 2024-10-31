@@ -58,6 +58,7 @@ function browserMainWindowMenu()
     end
     
     mHelp = uimenu(dlgBrowserWindowsPtr('get'),'Label','Help');
-    uimenu(mHelp,'Label', 'User Manual', 'Callback', @helpBrowserCallback);
-    uimenu(mHelp,'Label', 'About', 'Callback', @aboutBrowserCallback, 'Separator','on');
+    uimenu(mHelp,'Label', 'User Manual' , 'Callback', @helpBrowserCallback);
+    uimenu(mHelp,'Label', 'Terms Of Use', 'Callback', @termsOfUseBrowserCallback);
+    uimenu(mHelp,'Label', 'About'       , 'Callback', @aboutBrowserCallback);
 end

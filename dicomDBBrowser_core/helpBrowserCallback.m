@@ -30,5 +30,14 @@ function helpBrowserCallback(~, ~)
 % You should have received a copy of the GNU General Public License
 % along with DicomDBBrowser.  If not, see <http://www.gnu.org/licenses/>.
 
-                           
+    % sHelpFile = sprintf('%s/dicomDBBrowserHelp.pdf', browserRootPath('get'));
+    % 
+    % if ispc
+    %     system(['start "" "' sHelpFile '"']);
+    % elseif ismac
+    %     system(['open "' sHelpFile '"']);
+    % elseif isunix
+    %     system(['xdg-open "' sHelpFile '"']);
+    % end
+
 end 
