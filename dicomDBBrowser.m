@@ -102,7 +102,19 @@ function dicomDBBrowser(varargin)
 
     xSize = dScreenSize(3) * dDlgPosition(3); 
     ySize = dDialogSize - 30;                    
-    
+
+    sRootPath = browserRootPath('get');
+
+    if ~isempty(sRootPath)
+
+        javaFrame = get(dlgBrowserWindowsPtr('get'), 'JavaFrame');
+
+        if ~isempty(javaFrame)
+            
+            javaFrame.setFigureIcon(javax.swing.ImageIcon(sprintf('%s/logo.png', sRootPath)));       
+        end
+    end
+
     uiMainWindow = ...
         uipanel(dlgWindows,...
                 'Units'   , 'pixels',...
