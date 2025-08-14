@@ -33,7 +33,7 @@ function initBrowserRootPath()
         
         if ismac % Mac
             
-            sNameOfDeployedApp = 'dicomDBBrowser'; % do not include the '.app' extension
+            sNameOfDeployedApp = 'DICOM Database Browser'; % do not include the '.app' extension
             [~, result] = system(['top -n100 -l1 | grep ' sNameOfDeployedApp ' | awk ''{print $1}''']);
             result=strtrim(result);
             [status, result] = system(['ps xuwww -p ' result ' | tail -n1 | awk ''{print $NF}''']);

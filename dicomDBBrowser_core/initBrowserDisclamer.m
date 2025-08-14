@@ -54,7 +54,9 @@ function initBrowserDisclamer()
 %         answer = myquestdlg(sDisplayBuffer, 'Disclaimer Notice', 'I Accept','Exit','I Accept');
          h = msgbox(sDisplayBuffer, 'Disclamer Notice', 'warn');
          frames = java.awt.Frame.getFrames();
-         frames(end).setAlwaysOnTop(1); 
+         frames(end).setAlwaysOnTop(1);
+         setBrowserObjectIcon(h);
+     
 %            javaFrame = get(h, 'JavaFrame');
 %            javaFrame.setFigureIcon(javax.swing.ImageIcon('./logo.png'));
 
