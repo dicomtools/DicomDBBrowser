@@ -1,7 +1,7 @@
 
 <div align="center">
   <h1>TriDFusion (3DF) Image Viewer</h1>
-  <p><strong>The TriDFusion (3DF) Image Viewer</strong> is Multi-Fusion Image Viewer for research provided by <a href="https://daniellafontaine.com/">Daniel Lafontaine,</a></p><p>published by <a href="https://ejnmmiphys.springeropen.com/articles/10.1186/s40658-022-00501-y">EJNMMI Physics</a>, full-text access is available for download<a href="https://rdcu.be/cXP9i/"> here.</a></p> 
+<p><strong>The TriDFusion (3DF) Image Viewer</strong> is a multi-fusion image viewer for research, developed at <a href="https://www.mskcc.org/">Memorial Sloan Kettering Cancer Center</a> and provided by <a href="https://daniellafontaine.com/">Daniel Lafontaine</a>, published by <a href="https://ejnmmiphys.springeropen.com/articles/10.1186/s40658-022-00501-y">EJNMMI Physics</a>. Full-text access is available for download <a href="https://rdcu.be/cXP9i/">here</a>.</p>
 </div>
   
   
@@ -56,6 +56,7 @@
 ## MATLAB tested version
 
 * MATLAB 2024a
+* MATLAB 2025a
 
 ## Installation
 
@@ -111,7 +112,7 @@ CERR
 https://github.com/cerr/CERR
 
 ### Machine Learning Segmentation
-TotalSegmentator (Tested version: pip install totalsegmentator==1.5.6)
+TotalSegmentator 
 https://github.com/wasserth/TotalSegmentator
 
 After installation, open a command prompt and run `where TotalSegmentator`. If it doesn’t return a path, add the TotalSegmentator installation path to the Windows environment variables.
